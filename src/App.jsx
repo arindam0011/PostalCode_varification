@@ -16,7 +16,7 @@ const App = () => {
   
       <Suspense fallback={<LoaderPage />}>
       <Routes>
-        <Route path='/' element={
+        <Route path='/PostalCode_varification' element={
           <LocationInput 
           pincode={pincode} 
           setPincode={setPincode} 
@@ -25,7 +25,7 @@ const App = () => {
           apiData={apiData}
           setApiData={setApiData}
         />} />
-        <Route path='/Details' element={
+        <Route path='/PostalCode_varification/Details' element={
         apiData && pincode? (<DisplayData validPin={validPin} apiData={apiData} setApiData={setApiData}/>): 
         (<LocationInput 
           pincode={pincode} 

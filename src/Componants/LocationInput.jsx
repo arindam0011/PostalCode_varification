@@ -36,7 +36,7 @@ const LocationInput = ({ pincode, setPincode, validPin, setValidPin, setApiData,
             <input type='text' placeholder='Pincode' className='border rounded-lg p-2 border-slate-500 w-full'
                 onChange={handleChange}
             />
-            <Link to='/Details'><button className='font-bold bg-black text-white block mt-5 w-28 p-2 border rounded-lg'
+            <Link to='/PostalCode_varification/Details'><button className='font-bold bg-black text-white block mt-5 w-28 p-2 border rounded-lg'
                 onClick={() => {
                     if (pincode.length !== 6) {
                         alert('Please Enter Valid Pincode of 6 Digits')
