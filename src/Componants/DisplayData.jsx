@@ -53,7 +53,7 @@ const DisplayData = ({ validPin, apiData }) => {
                         )
                     })) : (<><h1 className='text-3xl font-bold text-red-500 py-auto px-auto w-full mb-5'>
                         ❌Couldn’t 😶‍🌫️find the 📬postal data ➡️that you’re 🧐looking for…🔎</h1>
-                        <h2 className='text-4xl font-bold text-center text-yellow-500 py-auto px-auto block'>Try again 🔄️</h2></>)
+                        <h2 className='text-4xl font-bold text-center text-yellow-500 py-auto px-auto block'>{ filterInput==='' ? `Try again 🔄️`:""}</h2></>)
                 }
 
             </div>
