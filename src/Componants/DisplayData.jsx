@@ -19,12 +19,13 @@ const DisplayData = ({ validPin, apiData }) => {
             );
             setMapArr(filteredData);
         }
-    }, [filterData, filterInput]);
 
+    }, [filterData, filterInput]);
 
 
     return (
         <div className='w-full p-5'>
+         
             <p className='font-bold text-l'>Pincode:{validPin}</p>
             <p className='text-l mb-4'><span className='font-bold text-l'>Message: </span>{apiData[0].Message}</p>
 
@@ -37,7 +38,7 @@ const DisplayData = ({ validPin, apiData }) => {
             </div>
             <div id="containner" className='w-full max-h-full overflow-auto flex flex-wrap item-center mt-5 py-5 g-2'>
                 {
-                  mapArr.length > 0 ?  (mapArr.map((item) => {
+                    mapArr.length > 0 ? (mapArr.map((item) => {
                         return (
                             <div className='w-[350px] min-h-[250px] p-2 border rounded border-slate-500 flex flex-col mx-2 my-2' key={item.Name}>
                                 <p className='text-3xl text-center mb-5'>📨</p>
@@ -50,7 +51,9 @@ const DisplayData = ({ validPin, apiData }) => {
                                 <p className='text-l'><span className='font-bold'>State: </span>{item.State}</p>
                             </div>
                         )
-                    })):(<h1 className='text-3xl font-bold text-center text-red-500 py-auto px-auto'>❌Couldn’t 😶‍🌫️find the 📬postal data ➡️that you’re 🧐looking for…🔎</h1>)
+                    })) : (<><h1 className='text-3xl font-bold text-red-500 py-auto px-auto w-full mb-5'>
+                        ❌Couldn’t 😶‍🌫️find the 📬postal data ➡️that you’re 🧐looking for…🔎</h1>
+                        <h2 className='text-4xl font-bold text-center text-yellow-500 py-auto px-auto block'>Try again 🔄️</h2></>)
                 }
 
             </div>

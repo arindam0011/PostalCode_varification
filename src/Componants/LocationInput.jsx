@@ -41,6 +41,9 @@ const LocationInput = ({ pincode, setPincode, validPin, setValidPin, setApiData,
                     if (pincode.length !== 6) {
                         alert('Please Enter Valid Pincode of 6 Digits')
                     }
+                    else if (pincode.trim() === '') {
+                        setValidPin('');
+                    }
                     else {
                         setValidPin(pincode);
                     }
