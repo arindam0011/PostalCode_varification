@@ -27,7 +27,7 @@ const App = () => {
               setApiData={setApiData}
             />} />
           <Route path='/PostalCode_varification/Details' element={
-            apiData && pincode ? (<DisplayData
+            validPin ? (<DisplayData
               pincode={pincode}
               validPin={validPin}
               apiData={apiData}

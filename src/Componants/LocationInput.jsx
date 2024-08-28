@@ -3,30 +3,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import LoaderPage from './LoaderPage'
 
-const LocationInput = ({ pincode, setPincode, validPin, setValidPin, setApiData, apiData }) => {
+const LocationInput = ({ pincode, setPincode, setValidPin, setApiData }) => {
 
-    useEffect(() => {
-
-        const getData = async () => {
-
-            try {
-                const responce = await fetch(`https://api.postalpincode.in/pincode/${validPin}`)
-                const data = await responce.json();
-                setApiData(data)
-            }
-            catch (error) {
-                alert('Invalid Pincode!!')
-                console.log(error)
-            }
-            }
-
-            if(validPin.trim() !== '') {
-                setTimeout(() => getData(), 3000)
-            }                
-
-        }, [validPin, setValidPin])
-      
-        
     const handleChange = (e) => {
         setPincode(e.target.value)
     }
@@ -49,9 +27,7 @@ const LocationInput = ({ pincode, setPincode, validPin, setValidPin, setApiData,
                     }
                 }}
             >Lookup</button></Link>
-            {
-              validPin && !apiData && <LoaderPage />
-            }
+            
         </div>
     )
 }
